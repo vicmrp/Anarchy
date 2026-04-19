@@ -108,18 +108,18 @@ namespace Anarchy.Bridge
             {
                 return;
             }
-
+            /*
             NativeArray<Entity> entities = entityQuery.ToEntityArray
             SelectedInfoPanelTogglesSystem uiSystem = World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<SelectedInfoPanelTogglesSystem>();
             if (uiSystem.CheckOverridable(instanceEntity))
             {
                 uiSystem.EntityManager.AddComponent<PreventOverride>(instanceEntity);
                 return true;
-            }
+            }*/
 
-            return false;
+            return;
         }
-
+        /*
         /// <summary>
         /// Tries to add anarchy component to an instance entity.
         /// </summary>
@@ -143,6 +143,6 @@ namespace Anarchy.Bridge
             }
 
             return false;
-        }
+        }*/
     }
 }
