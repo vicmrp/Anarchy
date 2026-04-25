@@ -27,8 +27,8 @@ const register: ModRegistrar = (moduleRegistry) => {
      moduleRegistry.extend("game-ui/game/components/tool-options/mouse-tool-options/mouse-tool-options.tsx", 'MouseToolOptions', ElevationControlComponent);
 
      // This appends the right bottom floating menu with a chirper image that is just floating above the vanilla chirper image. Hopefully noone moves it.
-     // moduleRegistry.append('GameBottomRight', ChirperModComponent);
-
+     moduleRegistry.extend("game-ui/game/components/right-menu/right-menu.tsx", "RightMenu", ChirperModComponent);      
+         
      moduleRegistry.extend("game-ui/game/components/selected-info-panel/selected-info-sections/selected-info-sections.tsx", 'selectedInfoSectionComponents', SelectedInfoPanelTogglesComponent);
 
      moduleRegistry.extend("game-ui/game/components/tool-options/tool-options-panel.tsx", 'useToolOptionsVisible', ToolOptionsVisibility);

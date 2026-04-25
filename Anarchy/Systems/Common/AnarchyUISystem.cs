@@ -16,7 +16,6 @@ namespace Anarchy.Systems.Common
     using Colossal.Logging;
     using Colossal.PSI.Environment;
     using Colossal.Serialization.Entities;
-    using cohtml.Net;
     using Colossal.UI.Binding;
     using Game;
     using Game.Input;
@@ -108,7 +107,6 @@ namespace Anarchy.Systems.Common
         private Dictionary<ErrorType, ErrorCheck.DisableState> m_DefaultErrorChecks;
         private bool m_FoundPlater;
         private ComponentType m_PlatterComponent;
-        private cohtml.Net.View m_UiView;
 
         /// <summary>
         /// A list of tools ids that Anarchy is applicable to.
@@ -238,7 +236,6 @@ namespace Anarchy.Systems.Common
             m_PrefabSystem = World.GetOrCreateSystemManaged<PrefabSystem>();
             m_ObjectToolSystem = World.GetOrCreateSystemManaged<ObjectToolSystem>();
             m_AnarchyPlopSystem = World.GetOrCreateSystemManaged<AnarchyPlopSystem>();
-            m_UiView = GameManager.instance.userInterface.view.View;
             m_EnableToolErrorsSystem = World.GetOrCreateSystemManaged<EnableToolErrorsSystem>();
             m_ToolSystem.EventToolChanged += OnToolChanged;
             m_ToolSystem.EventPrefabChanged += OnPrefabChanged;
@@ -354,8 +351,6 @@ namespace Anarchy.Systems.Common
             }
 
             m_DisableElevationLock.Value = false;
-
-
         }
 
         /// <inheritdoc/>
@@ -431,25 +426,6 @@ namespace Anarchy.Systems.Common
             if (m_AnarchyEnabled != m_AnarchyBinding.Value)
             {
                 m_AnarchyBinding.Value = m_AnarchyEnabled;
-            }
-
-            // This is a Java Script Hack to swap Chirper Image Src.
-            if (m_UiView != null)
-            {
-                // This script creates the Anarchy object if it doesn't exist.
-                m_UiView.ExecuteScript("if (yyAnarchy == null) var yyAnarchy = {};");
-
-                if (AnarchyMod.Instance.Settings.FlamingChirper &&
-                    AnarchyEnabled)
-                {
-                    // This script sets flaming chirper.
-                    m_UiView.ExecuteScript($"yyAnarchy.tagElements = document.getElementsByTagName(\"img\"); for (yyAnarchy.i = 0; yyAnarchy.i < yyAnarchy.tagElements.length; yyAnarchy.i++) {{ if (yyAnarchy.tagElements[yyAnarchy.i].src == \"coui://GameUI/Media/Game/Icons/Chirper.svg\" || yyAnarchy.tagElements[yyAnarchy.i].src == \"Media/Game/Icons/Chirper.svg\") yyAnarchy.tagElements[yyAnarchy.i].src = \"coui://uil/Colored/AnarchyChirper.svg\"; }}");
-                }
-                else
-                {
-                    // This script resets chirper.
-                    m_UiView.ExecuteScript($"yyAnarchy.tagElements = document.getElementsByTagName(\"img\"); for (yyAnarchy.i = 0; yyAnarchy.i < yyAnarchy.tagElements.length; yyAnarchy.i++) {{ if (yyAnarchy.tagElements[yyAnarchy.i].src == \"coui://uil/Colored/AnarchyChirper.svg\") yyAnarchy.tagElements[yyAnarchy.i].src = \"Media/Game/Icons/Chirper.svg\"; }}");
-                }
             }
 
             base.OnUpdate();

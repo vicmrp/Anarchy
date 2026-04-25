@@ -91,10 +91,10 @@ I will respond on the code modding channels on **Cities: Skylines Modding Discor
 * ST-Apps - Original Author of Extended Road Upgrades which has been incorporated with permission.
 * Chameleon TBN - Testing, Feedback, Icons, and Logo
 * Sully - Testing, Feedback, and Promotional Material.
-* Klyte45, Algernon, T.D.W. - Help with UI, Cooperative Development and Code Sharing
+* Klyte45, Algernon, T.D.W., Nullpinter - Help with UI, Cooperative Development and Code Sharing
 * Bad Peanut - Image Credit for Flaming Chirper, and grass icon.
 * krzychu124, Triton Supreme, and Quboid - Cooperative Development and Code Sharing
-* Localization: Nyoko, Citadino, Dome, elGendo87 and Eryalito (Spanish), Hendrix, Fuchs23, FearMyFeedEU and Infinityuranium (German), RilkeXS, CBEdwin, zlhww and GuaGua_ua (Chinese Simplified), Luis Fernando de Paula, dvzz, and felipecollucci (Brazilian Portuguese), Maxi and raistlin46 (Italian), karmel68 and Lisek (Polish), Tanat, TwotoolusFLY_LSh.st, and Hinanchovo (Korean), OWSEEX, Katsumoto, TraceXR, krugl1y, quoxsii and Bob.Smith17 (Russian) and Morgan Toverux, spooky_off, Quoifleur, Karg, CEO of Tabarnak and Edou24 (French), Seraphina and main1108 (Japanese), allegretic (Chinese Traditional), ti4go and ruidias (European Portuguese), Jesyx, scoobysub, WISSAH and kwalnoot(Dutch), GamingNerdLeith (Arabic), Emppu45 (Finnish).
+* Localization: Nyoko, Citadino, Dome, elGendo87 and Eryalito (Spanish), Hendrix, Fuchs23, FearMyFeedEU, Infinityuranium and redlabracer (German), RilkeXS, CBEdwin, zlhww and GuaGua_ua (Chinese Simplified), Luis Fernando de Paula, dvzz, and felipecollucci (Brazilian Portuguese), Maxi, raistlin46 and mariostabile1 (Italian), karmel68 and Lisek (Polish), Tanat, TwotoolusFLY_LSh.st, Hinanchovo, and acelion19 (Korean), OWSEEX, Katsumoto, TraceXR, krugl1y, quoxsii and Bob.Smith17 (Russian) and Morgan Toverux, spooky_off, Quoifleur, Karg, CEO of Tabarnak and Edou24 (French), Seraphina and main1108 (Japanese), allegretic and _Windy_ (Chinese Traditional), ti4go and ruidias (European Portuguese), Jesyx, scoobysub, WISSAH, kwalnoot, and scoobysub (Dutch), GamingNerdLeith (Arabic), Emppu45 (Finnish).
 * StarQ - Technical support, and helping recover people's saves.
 * Testing, Feedback - Dante, starrysum, HarbourMaster Jay, Dome, Tigon Ologdring, BruceyBoy, RaftermanNZ, Elektrotek, SpaceChad, GamingNerdLeith, CanadianMoosePlays, Teddy Radko, Jason_Stephen, Brian Rocha, elGendo87, CEO of Tabarnak, DanielVNZ
 * Those that provided broken saves to help diagnose and fix the problems with v1.7.2. Especially miguel.mateo who's save was used extensively during development and testing of v1.7.4.
@@ -112,18 +112,19 @@ I will respond on the code modding channels on **Cities: Skylines Modding Discor
   <!--Link to the forum post where the mod can be discussed-->
   <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/anarchy.1644970/" />
   <!--Version of the mod-->
-  <ModVersion Value="1.7.22" />
+  <ModVersion Value="1.7.23" />
   <!--Recommended version of the base game to use the mod-->
   <GameVersion Value="1.5.*" />
   <!--Dependency for the mod, can be set multiple-->
   <Dependency Id="74417" DisplayName="Unified Icon Library" Version="1.0.13" />
   <!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-  <ChangeLog>## Patch V1.7.22
-* Added Bike Lanes and Bike Restrictions to Pre-Applied Upgrades part of Network Anarchy
-* Updated Localization
-* Compatibility with Platter improved by removing Elevation row from Parcel prefabs.
-* Fixed CTD involving replacing forced tunnels.
-* Compatibility fixes for game version 1.5.2f1</ChangeLog>
+  <ChangeLog>## Patch V1.7.23
+*  Added bridge for other mods to register their tool systems.
+*  Added support for copying Anarchy and Transform Lock components using Move It Alpha's Copy/Paste.
+*  Added bridge for other mods to Add or Remove Anarchy or Transform Lock components to compatible game entities.
+*  Fixes to Flaming Chirper for game version 1.5.7f1. Thanks to Nullpinter for cleanest solution!
+*  Fix preview for Force Ground without Constant Slope.
+*  Updated Localization.</ChangeLog>
   <!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
   <ExternalLink Type="youtube" Url="https://www.youtube.com/watch?v=dJiCmFIxPK0" />
   <ExternalLink Type="discord" Url="https://discord.gg/HTav7ARPs2" />
