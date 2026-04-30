@@ -81,7 +81,7 @@
   "Options.OPTION[Anarchy.Anarchy.AnarchyMod.AnarchyModSettings.NetworkUpgradesPrefabs]": "Network Upgrades Assets (Requires Restart)",
   "Options.OPTION_DESCRIPTION[Anarchy.Anarchy.AnarchyMod.AnarchyModSettings.NetworkUpgradesPrefabs]": "Adds assets for Retaining Wall, Quay, Elevated, and Tunnel as road upgrades in the vanilla asset menu. These were originally part of Extended Road Upgrades by ST-Apps and have been incorporated into this mod with permission.",
   "Options.OPTION[Anarchy.Anarchy.AnarchyMod.AnarchyModSettings.ReplaceUpgradesBehavior]": "Replace Upgrades By Default",
-  "Options.OPTION_DESCRIPTION[Anarchy.Anarchy.AnarchyMod.AnarchyModSettings.ReplaceUpgradesBehavior]": "With this option enabled and while replacing networks, upgrades will by default be removed/added per tool options toggles. If disabled, they will be preserved is possible by default. You can change the behavior in-game by selecting the individual replace toggles for each row of options.",
+  "Options.OPTION_DESCRIPTION[Anarchy.Anarchy.AnarchyMod.AnarchyModSettings.ReplaceUpgradesBehavior]": "With this option enabled and while replacing networks, upgrades will by default be removed/added per tool options toggles. If disabled, they will be preserved if possible by default. You can change the behavior in-game by selecting the individual replace toggles for each row of options.",
   "Anarchy.ErrorType[AlreadyExists]": "Already Exists",
   "Anarchy.ErrorType[AlreadyUpgraded]": "Already Upgraded",
   "Anarchy.ErrorType[ExceedsCityLimits]": "Exceeds City Limits",

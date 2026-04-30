@@ -107,6 +107,8 @@
   "Anarchy.ErrorType[NoRoadAccess]": "Bereikbaarheid weg",
   "Anarchy.ErrorType[NoTrackAccess]": "Bereikbaarheid track",
   "Anarchy.ErrorType[NoTrainAccess]": "Bereikbaarheid trein",
+  "Anarchy.ErrorType[NotEnoughClearance]": "Onvoldoende doorrijhoogte",
+  "Anarchy.ErrorType[NoPortAccess]": "Geen toegang tot havengebied",
   "Anarchy.SECTION_TITLE[ErrorCheck]": "Fout controle",
   "Anarchy.SECTION_TITLE[Disabled]": "Uitgeschakeld?",
   "Anarchy.SECTION_TITLE[Transform]": "Transformeer.",
@@ -150,5 +152,6 @@
   "Anarchy.SECTION_TITLE[Tier]": "Rang",
   "Anarchy.TOOLTIP_TITLE[MainElements]": "Hoofdelementen",
   "Anarchy.TOOLTIP_DESCRIPTION[MainElements]": "Componenten toevoegen of verwijderen van het object op de eerste laag.",
-  "Anarchy.TOOLTIP_TITLE[SubElements]": "Subelementen"
+  "Anarchy.TOOLTIP_TITLE[SubElements]": "Subelementen",
+  "Anarchy.TOOLTIP_DESCRIPTION[SubElements]": "Voeg componenten toe of verwijder ze uit subelementen van het hoofdelement. Wees voorzichtig met Transform Lock op subelementen. Deze vergrendelt de relatieve positie en rotatie, en overschrijft de normale automatische herpositionering van subelementen door het spel wanneer hun owner wordt bijgewerkt. Network nodes kunnen daarnaast omklappen, waardoor de vergrendelde positie en rotatie onjuist worden omgedraaid. Het verwijderen van de Transform Lock en het bijwerken van de owner herstelt het standaard automatische gedrag van subelementen."
 }

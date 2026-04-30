@@ -108,6 +108,7 @@
   "Anarchy.ErrorType[NoTrackAccess]": "Kein Schienenzugang",
   "Anarchy.ErrorType[NoTrainAccess]": "Kein Zugzugang",
   "Anarchy.ErrorType[NotEnoughClearance]": "Abstand zu gering",
+  "Anarchy.ErrorType[NoPortAccess]": "Kein Port-Zugriff",
   "Anarchy.SECTION_TITLE[ErrorCheck]": "Fehlerkontrolle",
   "Anarchy.SECTION_TITLE[Disabled]": "Deaktivieren?",
   "Anarchy.SECTION_TITLE[Transform]": "transformieren",
@@ -150,5 +151,7 @@
   "Assets.DESCRIPTION[Tunnel01]": "Zwingt ein Netzwerk im Tunnelmodus zu sein. Die erzwungene Tunnelgrafik sieht meist schlecht aus. Nur verwenden, wenn nötig.",
   "Anarchy.SECTION_TITLE[Tier]": "Stufe",
   "Anarchy.TOOLTIP_TITLE[MainElements]": "Hauptelemente",
-  "Anarchy.TOOLTIP_TITLE[SubElements]": "Unterelemente"
+  "Anarchy.TOOLTIP_DESCRIPTION[MainElements]": "Komponenten zum Objekt der obersten Ebene hinzufügen oder daraus entfernen.",
+  "Anarchy.TOOLTIP_TITLE[SubElements]": "Unterelemente",
+  "Anarchy.TOOLTIP_DESCRIPTION[SubElements]": "Füge Komponenten zu Unterelementen des Hauptelements hinzu oder entferne sie daraus. Sei vorsichtig mit der Transformationssperre bei Unterelementen. Sie sperrt die relative Position und Drehung und überschreibt die normale automatische Neupositionierung von Unterelementen durch das Spiel, wenn deren Eigentümer aktualisiert wird. Netzwerkknoten können sich zudem spiegeln, was dazu führt, dass sich die gesperrte Position und Drehung falsch spiegeln. Durch Aufheben der Transformationssperre und Aktualisieren des Eigentümers wird das standardmäßige automatische Verhalten der Unterelemente wiederhergestellt."
 }

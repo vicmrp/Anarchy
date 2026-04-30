@@ -17,6 +17,7 @@ namespace Anarchy
     using Anarchy.Systems.ClearanceViolation;
     using Anarchy.Systems.Common;
     using Anarchy.Systems.ErrorChecks;
+    using Anarchy.Systems.MoveItIntegration;
     using Anarchy.Systems.NetworkAnarchy;
     using Anarchy.Systems.ObjectElevation;
     using Anarchy.Systems.OverridePrevention;
@@ -89,7 +90,7 @@ namespace Anarchy
             Log.effectivenessLevel = Level.Info;
 #endif
             Log.Info($"{nameof(AnarchyMod)}.{nameof(OnLoad)} Initializing settings");
-            Settings = new (this);
+            Settings = new(this);
             Log.Info($"{nameof(AnarchyMod)}.{nameof(OnLoad)} Loading en-US localization");
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(Settings));
             Log.Info($"{nameof(AnarchyMod)}.{nameof(OnLoad)} Loading other languages");
@@ -149,8 +150,9 @@ namespace Anarchy
             updateSystem.UpdateAt<NetworkAnarchyUISystem>(SystemUpdatePhase.UIUpdate);
             updateSystem.UpdateAt<AnarchyComponentsToolSystem>(SystemUpdatePhase.ToolUpdate);
             updateSystem.UpdateAt<AnarchyComponentsToolUISystem>(SystemUpdatePhase.UIUpdate);
-            Log.Info($"{nameof(AnarchyMod)}.{nameof(OnLoad)} Completed.");
+            updateSystem.UpdateAt<CopyAnarchyComponentsSystem>(SystemUpdatePhase.Modification2);
 
+            Log.Info($"{nameof(AnarchyMod)}.{nameof(OnLoad)} Completed.");
         }
 
         /// <inheritdoc/>

@@ -107,6 +107,8 @@
   "Anarchy.ErrorType[NoRoadAccess]": "도로 접근 불가",
   "Anarchy.ErrorType[NoTrackAccess]": "선로 접근 불가",
   "Anarchy.ErrorType[NoTrainAccess]": "기차 접근 불가",
+  "Anarchy.ErrorType[NotEnoughClearance]": "높이 간격 부족",
+  "Anarchy.ErrorType[NoPortAccess]": "항구 연결 불가",
   "Anarchy.SECTION_TITLE[ErrorCheck]": "에러 체크",
   "Anarchy.SECTION_TITLE[Disabled]": "비활성화?",
   "Anarchy.SECTION_TITLE[Transform]": "변환",
@@ -146,5 +148,10 @@
   "Assets.NAME[Elevated01]": "고가 모드",
   "Assets.DESCRIPTION[Elevated01]": "네트워크가 고가 모드(예: 교량, 고가도로, 교차로)를 사용하도록 강제합니다.",
   "Assets.NAME[Tunnel01]": "터널",
-  "Assets.DESCRIPTION[Tunnel01]": "네트워크가 터널이 되도록 강제합니다. 강제 터널은 종종 보기에 바람직하지 않습니다. 필요한 경우에만 사용하세요."
+  "Assets.DESCRIPTION[Tunnel01]": "네트워크가 터널이 되도록 강제합니다. 강제 터널은 종종 보기에 바람직하지 않습니다. 필요한 경우에만 사용하세요.",
+  "Anarchy.SECTION_TITLE[Tier]": "등급",
+  "Anarchy.TOOLTIP_TITLE[MainElements]": "주요 요소",
+  "Anarchy.TOOLTIP_DESCRIPTION[MainElements]": "최상위 객체에 포함된 하위 구성 요소를 추가하거나 제거합니다.",
+  "Anarchy.TOOLTIP_TITLE[SubElements]": "하위 요소",
+  "Anarchy.TOOLTIP_DESCRIPTION[SubElements]": "주요 요소의 하위 요소로부터 구성 요소를 추가하거나 제거합니다. 하위 요소의 '변환 잠금[Transform Lock]' 설정에 주의하십시오. 이 기능은 상대적인 위치와 회전값을 고정하며, 소유주[Owner] 객체가 업데이트될 때 게임이 자동으로 수행하는 하위 요소 재배치 기능보다 우선하여 적용됩니다. 네트워크 노드의 방향이 뒤집힐 경우, 잠긴 위치와 회전값도 잘못된 방향으로 뒤집힐 수 있습니다. 변환 잠금을 해제하고 소유주를 업데이트하면 바닐라 상태의 자동 하위 요소 배치 로직으로 초기화됩니다."
 }

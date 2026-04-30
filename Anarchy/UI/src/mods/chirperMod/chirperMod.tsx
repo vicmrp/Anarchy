@@ -1,7 +1,7 @@
-import iconStyles from "./chirperMod.module.scss";
+// Credit to Nullpinter for this solution for Flaming Chirper.
 import { bindValue, useValue } from "cs2/api";
 import mod from "../../../mod.json";
-import { radio } from "cs2/bindings";
+import { getModule } from "cs2/modding";
 
 // These establishes the binding with C# side. Without C# side game ui will crash.
 const anarchyEnabled$ = bindValue<boolean>(mod.id, 'AnarchyEnabled');
@@ -11,22 +11,20 @@ const flamingChirperOption$ = bindValue<boolean>(mod.id, 'FlamingChirperOption')
 const uilColored =                         "coui://uil/Colored/";
 const anarchyEnabledSrc =          uilColored +  "AnarchyChirper.svg";
 
-export const ChirperModComponent = () => {
+const images = getModule("game-ui/game/components/right-menu/right-menu.tsx", "images");                                          
+const originalChirper = images.chirper;
 
+export const ChirperModComponent =  (Prev : any) => (props : any) => {
     // These get the value of the bindings.
     const anarchyEnabled : boolean = useValue(anarchyEnabled$);
     const flamingChirperOption : boolean = useValue(flamingChirperOption$);
-    const radioEnabled : boolean = useValue(radio.radioEnabled$);
     
     // This takes the two bools from the bindings and condenses it down to a single bool for both being true.
     const showFlamingChirper : boolean = anarchyEnabled && flamingChirperOption;
 
-    // This either returns an empty JSX component or the flaming chirper image. Sass is used to determine absolute position, size, and to set z-index. Setting pointer events to none was precautionary. 
-    return (
-        <>
-            {showFlamingChirper && (
-                <img src={anarchyEnabledSrc} className ={radioEnabled? iconStyles.flamingChirperIcon : iconStyles.flamingChirperIconNoRadio}></img>
-            )}
-        </>
-    );
+    Object.defineProperty(images, "chirper", {
+        get: () => showFlamingChirper ? anarchyEnabledSrc : originalChirper, configurable: true,
+    });
+
+    return <Prev {...props} />;
 }
