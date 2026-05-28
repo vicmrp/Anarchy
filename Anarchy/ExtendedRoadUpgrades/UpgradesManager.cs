@@ -149,11 +149,19 @@ namespace Anarchy.ExtendedRoadUpgrades
                     return;
                 }
 
-                // Instantiate our clone copying all the properties over
-                var clonedGrassUpgradePrefab = GameObject.Instantiate(grassUpgradePrefab);
+                // Instantiate a new fence prefab.
+                FencePrefab fencePrefab = ScriptableObject.CreateInstance<FencePrefab>();
+                fencePrefab.active = true;
+                fencePrefab.name = upgradeMode.Id;
+                fencePrefab.prefab = fencePrefab;
 
-                // Replace the name our they will be called "Grass (Clone)"
-                clonedGrassUpgradePrefab.name = upgradeMode.Id;
+                // Copy the components from Grass Prefab but replace the prefab reference.
+                foreach (ComponentBase componentBase in grassUpgradePrefab.components)
+                {
+                    componentBase.prefab = fencePrefab;
+                    fencePrefab.AddComponentFrom(componentBase);
+                }
+
 
                 AnarchyMod.Instance.Log.Debug($"{logHeader} [{upgradeMode.Id}] Cloned the original Grass Prefab instance.");
 
@@ -163,24 +171,24 @@ namespace Anarchy.ExtendedRoadUpgrades
                 // There is probably a better way of doing this, but I need to be sure that we're not
                 // keeping any unintended reference to the source object so I'd rather manually copy
                 // over only the thing I need instead of relying on automatic cloning.
-                clonedGrassUpgradePrefab.Remove<UIObject>();
+                fencePrefab.Remove<UIObject>();
 
                 AnarchyMod.Instance.Log.Debug($"{logHeader} [{upgradeMode.Id}] Removed the original UIObject instance from the cloned Prefab.");
 
                 // Create and populate the new UIObject for our cloned Prefab
-                var clonedGrassUpgradePrefabUIObject = ScriptableObject.CreateInstance<UIObject>();
-                clonedGrassUpgradePrefabUIObject.m_Icon = $"{COUIBaseLocation}{upgradeMode.ObsoleteId}.svg";
-                clonedGrassUpgradePrefabUIObject.name = grassUpgradePrefabUIObject.name.Replace("Grass", upgradeMode.Id);
-                clonedGrassUpgradePrefabUIObject.m_IsDebugObject = grassUpgradePrefabUIObject.m_IsDebugObject;
-                clonedGrassUpgradePrefabUIObject.m_Priority = grassUpgradePrefabUIObject.m_Priority;
-                clonedGrassUpgradePrefabUIObject.m_Group = grassUpgradePrefabUIObject.m_Group;
-                clonedGrassUpgradePrefabUIObject.active = grassUpgradePrefabUIObject.active;
+                var upgradePrefabUIObject = ScriptableObject.CreateInstance<UIObject>();
+                upgradePrefabUIObject.m_Icon = $"{COUIBaseLocation}{upgradeMode.ObsoleteId}.svg";
+                upgradePrefabUIObject.name = grassUpgradePrefabUIObject.name.Replace("Grass", upgradeMode.Id);
+                upgradePrefabUIObject.m_IsDebugObject = grassUpgradePrefabUIObject.m_IsDebugObject;
+                upgradePrefabUIObject.m_Priority = grassUpgradePrefabUIObject.m_Priority;
+                upgradePrefabUIObject.m_Group = grassUpgradePrefabUIObject.m_Group;
+                upgradePrefabUIObject.active = grassUpgradePrefabUIObject.active;
 
-                AnarchyMod.Instance.Log.Debug($"{logHeader} [{upgradeMode.Id}] Created a custom UIObject for our cloned Prefab with name {clonedGrassUpgradePrefabUIObject.name} and icon {clonedGrassUpgradePrefabUIObject.m_Icon}.");
+                AnarchyMod.Instance.Log.Debug($"{logHeader} [{upgradeMode.Id}] Created a custom UIObject for our cloned Prefab with name {upgradePrefabUIObject.name} and icon {upgradePrefabUIObject.m_Icon}.");
 
                 // Add the newly created UIObject component and then add the cloned Prefab to our PrefabSystem
-                clonedGrassUpgradePrefab.AddComponentFrom(clonedGrassUpgradePrefabUIObject);
-                if (!prefabSystem.AddPrefab(clonedGrassUpgradePrefab))
+                fencePrefab.AddComponentFrom(upgradePrefabUIObject);
+                if (!prefabSystem.AddPrefab(fencePrefab))
                 {
                     AnarchyMod.Instance.Log.Error($"{logHeader} [{upgradeMode.Id}] Failed adding the cloned Prefab to PrefabSystem, exiting.");
                     return;
